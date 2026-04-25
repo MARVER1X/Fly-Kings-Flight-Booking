@@ -1,0 +1,162 @@
+/* --- Glassmorphism UI Form --- */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  width: 100%;
+  min-height: 80vh; 
+}
+
+/* --- Brand Identity Rendering --- */
+@keyframes plane { 0% { transform: translateX(-100%) translateY(35%) rotate(20deg); } 100% { transform: translateX(-10%) translateY(35%) rotate(0deg); } }
+@keyframes logo { 0% { transform: rotateY(0deg); } 40% { transform: skewX(-40deg); } 60% { transform: skewX(30deg); } 80% { transform: skewX(-20deg); } 100% { transform: scaleX(10deg); } }
+@keyframes bright { 0%, 100% { filter: brightness(100%); } 50% { filter: brightness(200%); } }
+
+.logo { position: relative; width: 100px; margin: 0 auto 40px; text-align: center; }
+.logo-img { animation: plane 0.3s linear; width: 60px; height: auto; }
+.logo-text { font-size: 2rem; font-weight: 700; animation: logo 1s ease-out 0.2s; transform-style: preserve-3d; margin-top: -10px; }
+.logo-text span:nth-child(1) { color: var(--accent-blue); animation: bright 2s linear 2s infinite; }
+.logo-text span:nth-child(2) { color: var(--accent-red); animation: bright 2s linear 3s infinite; }
+
+.search-container {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  width: 90%;
+  max-width: 650px;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+.search-container.querying {
+  border-color: rgba(79, 172, 254, 0.4);
+  box-shadow: 0 0 30px rgba(79, 172, 254, 0.2);
+}
+
+.search-container h2 {
+  color: var(--text-primary);
+  margin-bottom: 25px;
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.input-group input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.3);
+  background: rgba(11, 11, 14, 0.95);
+}
+
+.search-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 8, 68, 0.4);
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.loading-msg {
+  color: var(--text-secondary);
+  font-size: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(79, 172, 254, 0.1);
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.success-msg {
+  color: var(--text-primary);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.reset-btn {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.reset-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+  .input-group { flex-direction: column; gap: 10px; margin-bottom: 10px; }
+  .search-container { padding: 25px; width: 95%; }
+  .search-container h2 { font-size: 1.5rem; }
+}
