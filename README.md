@@ -1,16 +1,66 @@
-# React + Vite
+# Fly Kings Flight Booking Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A pixel-perfect, fully responsive, and highly interactive frontend interface for a flight booking application. Built with React and designed with a premium blend of Cyberpunk Neon and clean Apple-like aesthetics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Live Demo
 
-## React Compiler
+[Live deployment coming soon]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> A high-fidelity flight booking dashboard featuring a glassmorphic search engine, an infinite auto-scrolling modern fleet slider (featuring 20 unique aircraft), and a dynamic 3D matrix navigation. Designed to deliver a flawless, high-converting user experience across all breakpoints without relying on external UI libraries.
+
+---
+
+## ✅ Core Features
+
+- **Glassmorphic Search Engine** — A sleek, frosted-glass flight query interface with animated hover states and a simulated GDS loading state.
+- **Infinite Auto-Scrolling Fleet Slider** — A completely custom CSS-driven infinite loop displaying 20 unique aircraft cards with premium styling and zero Javascript-interval overhead.
+- **Matrix 3D Navigation** — A custom 3D rotating orb paired with an animated staggered navigation menu for desktop users.
+- **Mobile-First Sidebar** — The navigation seamlessly transforms into a completely flush, off-canvas frosted-glass sidebar for mobile and tablet users.
+- **Apple-Style Destination Grid** — A responsive CSS grid displaying popular flight routes with subtle neon underglow and smooth zoom hover effects.
+- **Strict Visual Fidelity** — Built entirely with custom CSS variables, ensuring a robust and consistent "Neon Luxury" theme across the entire application.
+- **Fully Responsive** — Scales flawlessly across Mobile (320px+), Tablet (768px+), and Desktop (1024px+).
+
+---
+
+## 🚧 Development Status & Upcoming Features
+
+*Note: This project is currently in active development focusing on frontend excellence before scaling into backend integrations.*
+
+- [ ] **React Context Implementation** — Integrating robust state management for the flight search parameters.
+- [ ] **Real-time Form Validation** — Enhancing the glassmorphic search engine to strictly enforce formatting and date selections.
+- [ ] **Mock Flight Search Processing** — Simulating search results before we plug into a real API.
+- [ ] **FastAPI Backend Connection** — Hooking up the polished UI to a secure Python-based Global Distribution System (GDS).
+
+---
+
+## ♿ Accessibility Expectations Met
+
+- **Semantic HTML** — Uses robust underlying structures including `<main>`, `<section>`, `<nav>`, and `<header>`.
+- **Form Controls** — Search inputs and buttons are properly bound and structured.
+- **Color Contrast** — Strict adherence to modern contrast expectations within the dark "Neon Luxury" theme, ensuring text remains highly legible against dark backgrounds.
+
+---
+
+## 🗂️ Architecture & Project Structure
+
+```
+├── src
+│   ├── components       # Modular React components (Header, HeroSearch, FleetSection, etc.)
+│   ├── App.jsx          # Primary layout composition
+│   └── index.css        # Global CSS variables, resets, and utility tokens
+├── public               # Public facing assets (Logos, Icons)
+└── package.json         # Dependencies and build scripts
+```
+
+---
+
+## 🛠️ Built With
+
+- **React (Vite)** — Fast development environment and highly optimized build.
+- **Vanilla CSS (Variables, Grid, Flexbox)** — Zero external UI libraries. 100% custom styling driving the glowing neon aesthetics, glassmorphism, and infinite animations.

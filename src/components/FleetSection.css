@@ -1,17 +1,89 @@
 .fleet-section {
-  padding: 80px 20px;
-  max-width: 1200px;
+  padding: 80px 0;
+  max-width: 100%;
   margin: 0 auto;
   min-height: 80vh;
+  overflow: hidden;
 }
 
-.fleet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Auto Slider Styles */
+.fleet-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Fading Edges for the seamless effect */
+.fleet-slider-container::before,
+.fleet-slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fleet-slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.fleet-slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+.fleet-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  /* Adjust animation duration depending on desired speed. 
+     60s is smooth for 40 cards total. */
+  animation: scroll 60s linear infinite;
+}
+
+.fleet-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move left by exactly half the track's total width 
+       (the 20 unique cards plus their gaps) */
+    transform: translateX(calc(-50% - 15px));
+  }
 }
 
 .fleet-card {
+  width: 320px;
+  flex-shrink: 0;
   background: var(--bg-card);
   border-radius: 20px;
   overflow: hidden;
@@ -19,12 +91,14 @@
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   transition: transform 0.4s ease, border-color 0.4s ease;
+  /* Add subtle float effect even within slider */
+  box-shadow: var(--glass-shadow);
 }
 
 .fleet-card:hover {
   transform: translateY(-8px);
   border-color: rgba(255, 8, 68, 0.4);
-  box-shadow: 0 15px 35px rgba(255, 8, 68, 0.2);
+  box-shadow: 0 15px 35px rgba(255, 8, 68, 0.3);
 }
 
 .fleet-img-wrapper {
@@ -60,7 +134,7 @@
 }
 
 .fleet-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
   margin-bottom: 15px;
   font-weight: 600;
@@ -76,7 +150,7 @@
 .badge-tech, .badge-capacity {
   padding: 6px 12px;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -90,4 +164,16 @@
   background: rgba(255, 8, 68, 0.1);
   color: var(--accent-red);
   border: 1px solid rgba(255, 8, 68, 0.3);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
