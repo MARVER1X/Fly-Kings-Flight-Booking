@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './DestinationGrid.css';
 
 const destinations = [
-  { id: 1, city: 'London', code: 'LHR', price: '$450', img: 'https://images.unsplash.com/photo-1513635269975-5969336cd8ce?auto=format&fit=crop&q=80&w=800' },
+  { id: 1, city: 'London', code: 'LHR', price: '$450', img: 'https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&q=80&w=800' },
   { id: 2, city: 'Tokyo', code: 'NRT', price: '$890', img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&q=80&w=800' },
   { id: 3, city: 'New York', code: 'JFK', price: '$320', img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=800' },
   { id: 4, city: 'Dubai', code: 'DXB', price: '$650', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800' },

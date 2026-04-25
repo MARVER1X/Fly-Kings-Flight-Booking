@@ -1,0 +1,93 @@
+.fleet-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.fleet-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  overflow: hidden;
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.fleet-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 8, 68, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 8, 68, 0.2);
+}
+
+.fleet-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.fleet-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.fleet-card:hover .fleet-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.fleet-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(11, 11, 14, 0.95) 100%);
+}
+
+.fleet-content {
+  padding: 25px;
+  text-align: center;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+.fleet-content h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.fleet-details {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge-tech, .badge-capacity {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge-tech {
+  background: rgba(79, 172, 254, 0.1);
+  color: var(--accent-blue);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.badge-capacity {
+  background: rgba(255, 8, 68, 0.1);
+  color: var(--accent-red);
+  border: 1px solid rgba(255, 8, 68, 0.3);
+}
