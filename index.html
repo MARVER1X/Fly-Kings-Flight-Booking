@@ -1,92 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyKings | Flight Search MVP</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="outer">
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <nav class="nav">
-            <ul class="nav-ul">
-                <li class="nav-item li1 shadow-left"><a href="#home">Home</a></li>
-                <li class="nav-item li2 shadow-left"><a href="#book">Book</a></li>
-                <li class="nav-item li3 shadow-left"><a href="#destinations">Routes</a></li>
-                <li class="nav-item li4 shadow-left"><a href="#deals">Deals</a></li>
-                <li class="nav-item li5 shadow-right"><a href="#fleet">Fleet</a></li>
-                <li class="nav-item li6 shadow-right"><a href="#info">Info</a></li>
-                <li class="nav-item li7 shadow-right"><a href="#login">Log In</a></li>  
-                <li class="nav-item li8 shadow-right"><a href="#signup">Sign Up</a></li>            
-            </ul>
-        </nav>
-        
-        <div class="nav-3d-back">
-            <div class="D3-rings-border"></div>
-            <div class="D3-rings">
-                <div class="d3-rings-3d">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                    <div class="ring ring-4"></div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="logo">
-        <img class="logo-img" src="images/07DB2EDE-EBEA-4813-87A4-5870FB0A70D6.PNG" alt="FlyKings Logo">
-        <div class="logo-text"><span>Fly</span><span>Kings</span></div>
-    </div>
-
-    <main class="hero-section" id="home">
-        <div class="search-container" id="book">
-            <h2>Find Your Next Destination</h2>
-            <form id="flight-search">
-                <div class="input-group">
-                    <input type="text" id="origin" placeholder="From (e.g., LOS)" required>
-                    <input type="text" id="destination" placeholder="To (e.g., LHR)" required>
-                </div>
-                <div class="input-group">
-                    <input type="date" id="depart" required>
-                    <input type="date" id="return">
-                </div>
-                <button type="submit" class="search-btn">Search Flights</button>
-            </form>
-            <p id="loading-msg" class="hidden-msg">Querying Global Distribution System...</p>
-        </div>
-    </main>
-
-    <section id="destinations" class="dummy-section">
-        <div class="reveal">
-            <h2>Popular Destinations</h2>
-            <p>Explore our top-rated flight routes across the globe.</p>
-        </div>
-    </section>
-    
-    <section id="deals" class="dummy-section alt-bg">
-        <div class="reveal">
-            <h2>Exclusive Deals</h2>
-            <p>Save up to 30% on your next trip when you book today. (MVP Data Pending)</p>
-        </div>
-    </section>
-
-    <section id="fleet" class="dummy-section">
-        <div class="reveal">
-            <h2>Our Fleet</h2>
-            <p>Experience the sky in our modern, fuel-efficient aircraft.</p>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>temp-app</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
