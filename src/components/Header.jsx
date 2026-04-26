@@ -112,10 +112,10 @@ const Header = () => {
           {isSearchOpen && (
             <motion.div 
               className="runway-search-panel"
-              initial={{ height: 0, opacity: 0, padding: "0 30px" }}
-              animate={{ height: "auto", opacity: 1, padding: "30px 30px" }}
-              exit={{ height: 0, opacity: 0, padding: "0 30px" }}
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }} // Smooth Apple-like easing
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }} 
             >
               <form className="runway-form" onSubmit={handleSearchSubmit}>
                 <div className="runway-track-container">
@@ -125,10 +125,10 @@ const Header = () => {
                   {/* The airplane SVG */}
                   <motion.div 
                     className={`airplane-icon ${searchState === 'flying' || searchState === 'results' ? 'taking-off' : ''}`}
-                    initial={{ x: 0, y: 14.5, rotate: 90 }}
+                    initial={{ x: 0, y: 30, rotate: 90 }}
                     animate={{ 
                       x: searchState === 'flying' || searchState === 'results' ? '120vw' : 0,
-                      y: 14.5, // Specifically tuned to hit the dashed line center
+                      y: 30, // Pushed down by 15px to sit on the line
                       scale: 1, 
                       rotate: 90 
                     }}

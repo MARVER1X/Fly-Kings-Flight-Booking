@@ -230,12 +230,13 @@
   border-radius: 0 0 30px 30px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   width: 95%; /* Slightly narrower than pill for a sleek tray look */
-  margin-top: -20px; /* Tucks it slightly up under the pill */
-  padding-top: 30px !important; /* Overrides Framer padding to account for the tuck */
+  margin-top: -30px; /* Tucks it slightly up under the pill */
+  padding: 50px 30px 30px 30px; /* Static padding, top padding accounts for the tuck */
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative;
+  position: absolute; /* Changed to absolute to prevent pushing the document down during slide */
+  top: 100%;
   z-index: 5;
 }
 
