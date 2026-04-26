@@ -29,6 +29,10 @@
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Prevent text cursor blinking */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .header-nav.loaded .nav-pill {
@@ -87,6 +91,26 @@
 
 .nav-item:hover::after {
   width: 60%;
+}
+
+/* --- Sign In CTA Button --- */
+.login-btn-wrapper::after {
+  display: none; /* Remove underline from CTA */
+}
+
+.login-btn {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 20px;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(255, 8, 68, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-item:hover .login-btn {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 8, 68, 0.5);
 }
 
 /* --- 3D Orb Integration --- */
@@ -166,6 +190,11 @@
   z-index: 110;
   flex-direction: column;
   gap: 6px;
+  
+  /* Prevent text cursor on hamburger */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .bar {

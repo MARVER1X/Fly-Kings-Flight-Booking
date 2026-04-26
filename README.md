@@ -63,4 +63,5 @@ A pixel-perfect, fully responsive, and highly interactive frontend interface for
 ## 🛠️ Built With
 
 - **React (Vite)** — Fast development environment and highly optimized build.
-- **Vanilla CSS (Variables, Grid, Flexbox)** — Zero external UI libraries. 100% custom styling driving the glowing neon aesthetics, glassmorphism, and infinite animations.
+- **Framer Motion** — Industry-standard animation library powering physics-based layout morphing and fluid micro-interactions.
+- **Vanilla CSS (Variables, Grid, Flexbox)** — Zero external component libraries. 100% custom styling driving the glowing neon aesthetics, glassmorphism, and infinite animations.

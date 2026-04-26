@@ -24,10 +24,9 @@ const Header = () => {
       </div>
 
       <div className={`nav-pill ${isMenuOpen ? 'active' : ''}`} id="nav-ul">
-        <div className="nav-item li-1"><a href="#home">Home</a></div>
-        <div className="nav-item li-2"><a href="#destinations">Destinations</a></div>
-        <div className="nav-item li-3"><a href="#fleet">Fleet</a></div>
-        <div className="nav-item li-4"><a href="#book">Book</a></div>
+        <div className="nav-item li-1"><a href="#home" onClick={() => setIsMenuOpen(false)}>Search</a></div>
+        <div className="nav-item li-2"><a href="#destinations" onClick={() => setIsMenuOpen(false)}>Destinations</a></div>
+        <div className="nav-item li-3"><a href="#fleet" onClick={() => setIsMenuOpen(false)}>Fleet</a></div>
         
         {/* 3D Orb Component centered in the pill */}
         <div className="orb-container">
@@ -43,10 +42,9 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="nav-item li-5"><a href="#deals">Deals</a></div>
-        <div className="nav-item li-6"><a href="#experience">Experience</a></div>
-        <div className="nav-item li-7"><a href="#rewards">Rewards</a></div>
-        <div className="nav-item li-8"><a href="#contact">Contact</a></div>
+        <div className="nav-item li-5"><a href="#deals" onClick={() => setIsMenuOpen(false)}>Deals</a></div>
+        <div className="nav-item li-6"><a href="#manage" onClick={() => setIsMenuOpen(false)}>Manage</a></div>
+        <div className="nav-item li-7 login-btn-wrapper"><a href="#login" className="login-btn" onClick={() => setIsMenuOpen(false)}>Sign In / Join</a></div>
       </div>
     </nav>
   );
