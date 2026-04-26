@@ -8,10 +8,26 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchState, setSearchState] = useState('idle'); // idle, flying, results
   const [searchQuery, setSearchQuery] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
   const searchRef = useRef(null);
 
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Check initial width and listen for resize
+    const checkMobile = () => {
+      const currentlyMobile = window.innerWidth <= 768;
+      setIsMobile((prevMobile) => {
+        // If we crossed the breakpoint from mobile to desktop, reset menu state
+        if (prevMobile && !currentlyMobile) {
+          setIsMenuOpen(false);
+        }
+        return currentlyMobile;
+      });
+    };
+    checkMobile(); // Check on mount
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Handle click outside to close search
@@ -55,19 +71,60 @@ const Header = () => {
     }
   };
 
+  // Variants for the mobile liquid glass expansion
+  const menuVariants = {
+    mobileClosed: {
+      clipPath: "circle(0px at 55px 55px)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40
+      }
+    },
+    mobileOpen: {
+      clipPath: "circle(150% at 55px 55px)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40
+      }
+    },
+    desktop: {
+      clipPath: "circle(150% at 50% 50%)",
+      transition: {
+        duration: 0.1
+      }
+    }
+  };
+
   return (
     <nav className={`header-nav ${isLoaded ? 'loaded' : ''}`} ref={searchRef}>
-      <div 
-        className={`menu-toggle ${isMenuOpen ? 'is-active' : ''}`} 
-        id="mobile-menu"
-        onClick={toggleMenu}
+      {/* The Extracted Orb Component - Acts as Mobile Menu Toggle */}
+      <motion.div 
+        key={isMobile ? 'orb-mobile' : 'orb-desktop'} // Force remount to clear sticky Framer Motion inline styles
+        className="orb-container"
+        onClick={isMobile ? toggleMenu : undefined}
+        whileTap={isMobile ? { scale: 0.8 } : undefined}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
+        <div className="nav-3d-back">
+          <div className="D3-rings-border"></div>
+          <div className="D3-rings"></div>
+          <div className="d3-rings-3d">
+            <div className="ring ring-1"></div>
+            <div className="ring ring-2"></div>
+            <div className="ring ring-3"></div>
+            <div className="ring ring-4"></div>
+          </div>
+        </div>
+      </motion.div>
 
-      <div className={`nav-container ${isMenuOpen ? 'active' : ''}`}>
+      <motion.div 
+        className={`nav-container ${isMenuOpen ? 'active' : ''}`}
+        initial={false}
+        animate={isMobile ? (isMenuOpen ? "mobileOpen" : "mobileClosed") : "desktop"}
+        variants={menuVariants}
+      >
         {/* The Permanent Nav Pill */}
         <div className="nav-pill" id="nav-ul">
           {/* Left Side Navigation Group */}
@@ -76,7 +133,6 @@ const Header = () => {
               <a href="#search" onClick={(e) => { 
                 e.preventDefault(); 
                 setIsSearchOpen(!isSearchOpen); 
-                setIsMenuOpen(false); 
               }}>
                 Search
               </a>
@@ -85,19 +141,8 @@ const Header = () => {
             <div className="nav-item li-3"><a href="#flights" onClick={() => setIsMenuOpen(false)}>Flights</a></div>
           </div>
           
-          {/* 3D Orb Component centered in the pill */}
-          <div className="orb-container">
-            <div className="nav-3d-back">
-              <div className="D3-rings-border"></div>
-              <div className="D3-rings"></div>
-              <div className="d3-rings-3d">
-                <div className="ring ring-1"></div>
-                <div className="ring ring-2"></div>
-                <div className="ring ring-3"></div>
-                <div className="ring ring-4"></div>
-              </div>
-            </div>
-          </div>
+          {/* Spacer to hold the Orb's place visually on Desktop */}
+          <div className="desktop-orb-spacer"></div>
 
           {/* Right Side Navigation Group */}
           <div className="nav-group right-group">
@@ -118,6 +163,14 @@ const Header = () => {
               transition={{ duration: 0.4, ease: "easeOut" }} 
             >
               <form className="runway-form" onSubmit={handleSearchSubmit}>
+                {/* Mobile Back Button */}
+                <div className="mobile-search-back" onClick={() => setIsSearchOpen(false)}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Back to Menu</span>
+                </div>
+
                 <div className="runway-track-container">
                   {/* The runway styling */}
                   <div className="runway-lines"></div>
@@ -175,7 +228,7 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
     </nav>
   );
 };
