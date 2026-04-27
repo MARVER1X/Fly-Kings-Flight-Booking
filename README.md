@@ -50,7 +50,7 @@ A pixel-perfect, fully responsive, and highly interactive frontend interface for
 
 ## 🗂️ Architecture & Project Structure
 
-```
+```text
 ├── src
 │   ├── components       # Modular React components (Header, HeroSearch, FleetSection, etc.)
 │   ├── App.jsx          # Primary layout composition
