@@ -27,7 +27,7 @@ const HeroSearch = () => {
   return (
     <main className="hero-section" id="home">
       <div className="logo">
-          <img className="logo-img" src="/images/07DB2EDE-EBEA-4813-87A4-5870FB0A70D6.PNG" alt="FlyKings Logo" />
+          <img className="logo-img" src="/images/flykings-logo.png" alt="FlyKings Logo" />
           <div className="logo-text"><span>Fly</span><span>Kings</span></div>
       </div>
 

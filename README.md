@@ -6,7 +6,7 @@ A pixel-perfect, fully responsive, and highly interactive frontend interface for
 
 ## 🔗 Live Demo
 
-[Live deployment coming soon]
+[Demo](https://fly-kings-flight-booking.vercel.app)
 
 ---
 
