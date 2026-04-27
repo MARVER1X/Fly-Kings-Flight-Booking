@@ -21,7 +21,8 @@ A pixel-perfect, fully responsive, and highly interactive frontend interface for
 - **Glassmorphic Search Engine** — A sleek, frosted-glass flight query interface with animated hover states and a simulated GDS loading state.
 - **Infinite Auto-Scrolling Fleet Slider** — A completely custom CSS-driven infinite loop displaying 20 unique aircraft cards with premium styling and zero Javascript-interval overhead.
 - **Matrix 3D Navigation** — A custom 3D rotating orb paired with an animated staggered navigation menu for desktop users.
-- **Mobile-First Sidebar** — The navigation seamlessly transforms into a completely flush, off-canvas frosted-glass sidebar for mobile and tablet users.
+- **Dropdown Tray Search Architecture** — A high-performance, GPU-accelerated dropdown search tray that slides from beneath the navigation pill, delivering 60fps buttery smooth interactions.
+- **Liquid Glass Mobile Morphing** — The traditional hamburger menu has been replaced. On mobile, the interactive 3D Orb acts as the master toggle, seamlessly morphing into a full-screen liquid glass sidebar via clip-path animations.
 - **Apple-Style Destination Grid** — A responsive CSS grid displaying popular flight routes with subtle neon underglow and smooth zoom hover effects.
 - **Strict Visual Fidelity** — Built entirely with custom CSS variables, ensuring a robust and consistent "Neon Luxury" theme across the entire application.
 - **Fully Responsive** — Scales flawlessly across Mobile (320px+), Tablet (768px+), and Desktop (1024px+).
@@ -62,6 +63,6 @@ A pixel-perfect, fully responsive, and highly interactive frontend interface for
 
 ## 🛠️ Built With
 
-- **React (Vite)** — Fast development environment and highly optimized build.
-- **Framer Motion** — Industry-standard animation library powering physics-based layout morphing and fluid micro-interactions.
-- **Vanilla CSS (Variables, Grid, Flexbox)** — Zero external component libraries. 100% custom styling driving the glowing neon aesthetics, glassmorphism, and infinite animations.
+- **React (Vite)** — Fast development environment and highly optimized build structure.
+- **Framer Motion** — Industry-standard animation library seamlessly integrated to power physics-based layout morphing, GPU-accelerated UI transitions, and fluid micro-interactions.
+- **Modern CSS Architecture** — Extensive use of CSS Variables, Grid, and Flexbox to drive the glowing neon aesthetics, complex glassmorphism, and infinite scrolling animations alongside modern react workflows.
