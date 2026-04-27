@@ -8,7 +8,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchState, setSearchState] = useState('idle'); // idle, flying, results
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const searchRef = useRef(null);
 
   useEffect(() => {
